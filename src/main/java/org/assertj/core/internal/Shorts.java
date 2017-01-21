@@ -50,6 +50,11 @@ public class Shorts extends Numbers<Short> {
   }
 
   @Override
+  protected Short one() {
+    return 1;
+  }
+
+  @Override
   protected Short absDiff(Short actual, Short other) {
     return (short) abs(other - actual);
   }

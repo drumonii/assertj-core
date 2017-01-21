@@ -44,6 +44,8 @@ public abstract class Numbers<NUMBER extends Number & Comparable<NUMBER>> extend
 
   protected abstract NUMBER zero();
 
+  protected abstract NUMBER one();
+
   /**
    * Asserts that the actual value is equal to zero.<br>
    * It does not rely on the custom comparisonStrategy (if one is set).
@@ -68,6 +70,19 @@ public abstract class Numbers<NUMBER extends Number & Comparable<NUMBER>> extend
    */
   public void assertIsNotZero(AssertionInfo info, NUMBER actual) {
     assertNotEqualByComparison(info, actual, zero());
+  }
+
+  /**
+   * Asserts that the actual value is equal to one.<br>
+   * It does not rely on the custom comparisonStrategy (if one is set).
+   *
+   * @param info contains information about the assertion.
+   * @param actual the actual value.
+   * @throws AssertionError if the actual value is {@code null}.
+   * @throws AssertionError if the actual value is not equal to one.
+   */
+  public void assertIsOne(AssertionInfo info, NUMBER actual) {
+    assertEqualByComparison(info, actual, one());
   }
 
   /**

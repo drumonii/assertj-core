@@ -8,7 +8,7 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  *
- * Copyright 2012-2016 the original author or authors.
+ * Copyright 2012-2017 the original author or authors.
  */
 package org.assertj.core.api;
 
@@ -33,6 +33,7 @@ import org.assertj.core.util.VisibleForTesting;
  * @author Alex Ruiz
  * @author Mikhail Mazursky
  * @author Nicolas François
+ * @author Drummond Dawson
  */
 public abstract class AbstractByteAssert<S extends AbstractByteAssert<S>> extends AbstractComparableAssert<S, Byte>
     implements NumberAssert<S, Byte> {
@@ -99,6 +100,13 @@ public abstract class AbstractByteAssert<S extends AbstractByteAssert<S>> extend
   @Override
   public S isNotZero() {
     bytes.assertIsNotZero(info, actual);
+    return myself;
+  }
+
+  /** {@inheritDoc} */
+  @Override
+  public S isOne() {
+    bytes.assertIsOne(info, actual);
     return myself;
   }
 

@@ -50,6 +50,11 @@ public class Doubles extends RealNumbers<Double> {
   }
 
   @Override
+  protected Double one() {
+    return 1.0d;
+  }
+
+  @Override
   protected Double NaN() {
     return Double.NaN;
   }

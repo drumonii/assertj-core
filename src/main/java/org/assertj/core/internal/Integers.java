@@ -48,6 +48,11 @@ public class Integers extends Numbers<Integer> {
   }
 
   @Override
+  protected Integer one() {
+    return 1;
+  }
+
+  @Override
   protected Integer absDiff(Integer actual, Integer other) {
     return Math.abs(actual - other);
   }

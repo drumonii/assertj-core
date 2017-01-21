@@ -12,6 +12,7 @@
  */
 package org.assertj.core.internal;
 
+import static java.math.BigDecimal.ONE;
 import static java.math.BigDecimal.ZERO;
 
 import java.math.BigDecimal;
@@ -49,6 +50,11 @@ public class BigDecimals extends Numbers<BigDecimal> {
   @Override
   protected BigDecimal zero() {
     return ZERO;
+  }
+
+  @Override
+  protected BigDecimal one() {
+    return ONE;
   }
 
   @Override

@@ -51,6 +51,11 @@ public class Floats extends RealNumbers<Float> {
   }
 
   @Override
+  protected Float one() {
+    return 1.0f;
+  }
+
+  @Override
   protected Float NaN() {
     return Float.NaN;
   }

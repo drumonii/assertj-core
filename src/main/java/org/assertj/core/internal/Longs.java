@@ -33,11 +33,6 @@ public class Longs extends Numbers<Long> {
     return INSTANCE;
   }
 
-  @Override
-  protected Long zero() {
-    return 0L;
-  }
-
   @VisibleForTesting
   Longs() {
     super();
@@ -45,6 +40,16 @@ public class Longs extends Numbers<Long> {
 
   public Longs(ComparisonStrategy comparisonStrategy) {
     super(comparisonStrategy);
+  }
+
+  @Override
+  protected Long zero() {
+    return 0L;
+  }
+
+  @Override
+  protected Long one() {
+    return 1L;
   }
 
   @Override

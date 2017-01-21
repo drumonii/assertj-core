@@ -8,7 +8,7 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  *
- * Copyright 2012-2016 the original author or authors.
+ * Copyright 2012-2017 the original author or authors.
  */
 package org.assertj.core.api;
 
@@ -34,6 +34,7 @@ import org.assertj.core.util.VisibleForTesting;
  * @author Joel Costigliola
  * @author Mikhail Mazursky
  * @author Nicolas François
+ * @author Drummond Dawson
  */
 public abstract class AbstractDoubleAssert<S extends AbstractDoubleAssert<S>> extends
     AbstractComparableAssert<S, Double> implements FloatingPointNumberAssert<S, Double> {
@@ -70,6 +71,13 @@ public abstract class AbstractDoubleAssert<S extends AbstractDoubleAssert<S>> ex
   @Override
   public S isNotZero() {
     doubles.assertIsNotZero(info, actual);
+    return myself;
+  }
+
+  /** {@inheritDoc} */
+  @Override
+  public S isOne() {
+    doubles.assertIsOne(info, actual);
     return myself;
   }
 

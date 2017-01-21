@@ -48,6 +48,11 @@ public class Bytes extends Numbers<Byte> {
   }
 
   @Override
+  protected Byte one() {
+    return 1;
+  }
+
+  @Override
   protected Byte absDiff(Byte actual, Byte other) {
     return (byte)Math.abs(actual - other); // TODO check corner case when diff > max byte
   }
